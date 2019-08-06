@@ -1,9 +1,9 @@
-FROM oracle/graalvm-ce:1.0.0-rc16
+FROM oracle/graalvm-ce:19.0.2
 
 ENV MVN_VERSION 3.6.1
 ENV M2_HOME /opt/maven
 ENV MAVEN_HOME /opt/maven
-ENV JAVA_HOME /opt/graalvm-ce-1.0.0-rc16
+ENV JAVA_HOME /opt/graalvm-ce-19.0.2
 ENV GRAALVM_HOME ${JAVA_HOME}
 ENV PATH ${JAVA_HOME}/bin:${M2_HOME}/bin:${PATH}
 
