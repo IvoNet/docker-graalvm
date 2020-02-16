@@ -17,6 +17,8 @@ The compiling and running will happen against the GraalVM in the container.
 
 * Quarkus dev mode build
 
+### Dev mode
+
 ```bash
 docker run                    \
   -it                         \
@@ -39,6 +41,20 @@ docker run                    \
   -p 8080:8080                \
   ivonet/graalvm:1.0.0-rc16   \
   mvn package -Pnative
+```
+
+### runnen native-image build
+
+```bash
+docker run                   \
+  -it                        \
+  --rm                       \
+  --name graalvm             \
+  -v "$(pwd):/project"       \
+  -p 8080:8080               \
+  -v "${HOME}/.m2:/root/.m2" \
+  ivonet/graalvm:1.0.0-rc16  \
+  ./target/getting-started-1.0-SNAPSHOT-runner  
 ```
 
 ### GraalVM as interactive shell

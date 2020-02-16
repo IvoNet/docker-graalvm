@@ -1,13 +1,13 @@
-FROM oracle/graalvm-ce:1.0.0-rc16
+FROM oracle/graalvm-ce:19.3.1-java11
 
-ENV MVN_VERSION 3.6.1
+ENV MVN_VERSION 3.6.3
 ENV M2_HOME /opt/maven
 ENV MAVEN_HOME /opt/maven
-ENV JAVA_HOME /opt/graalvm-ce-1.0.0-rc16
+ENV JAVA_HOME /opt/graalvm-ce-java11-19.3.1
 ENV GRAALVM_HOME ${JAVA_HOME}
 ENV PATH ${JAVA_HOME}/bin:${M2_HOME}/bin:${PATH}
 
-RUN ${GRAALVM_HOME}/bin/gu install python \
+RUN ls /opt && ${GRAALVM_HOME}/bin/gu install python \
  && ${GRAALVM_HOME}/bin/gu install R \
  && ${GRAALVM_HOME}/bin/gu install ruby
 # && ${GRAALVM_HOME}/bin/gu install native-image
