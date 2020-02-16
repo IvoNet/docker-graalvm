@@ -7,7 +7,7 @@ ENV JAVA_HOME /opt/graalvm-ce-java11-19.3.1
 ENV GRAALVM_HOME ${JAVA_HOME}
 ENV PATH ${JAVA_HOME}/bin:${M2_HOME}/bin:${PATH}
 
-RUN ls /opt && ${GRAALVM_HOME}/bin/gu install python \
+RUN ${GRAALVM_HOME}/bin/gu install python \
  && ${GRAALVM_HOME}/bin/gu install R \
  && ${GRAALVM_HOME}/bin/gu install ruby
 # && ${GRAALVM_HOME}/bin/gu install native-image
